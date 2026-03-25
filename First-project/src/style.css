@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #282D35; /* Background for the whole page */
+}
+
+/* --- NAV / HEADER STYLES --- */
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    height: 90px;
+    padding: 30px 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.nav--logo_container {
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes the toggler to the far right */
+}
+
+.nav--icon {
+    width: 28px;
+    margin-right: 7px;
+}
+
+.nav--logo_text {
+    color: #61DAFB;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* --- MAIN BODY STYLES --- */
+
+main {
+    padding: 57px 27px;
+    background-color: white;
+    color: #2B283A;
+    /* Faded React Logo Background */
+    background-image: url("./assets/react-icon-large.png");
+    background-repeat: no-repeat;
+    background-position: right 75%;
+    height: calc(100vh - 90px);
+}
+
+.main--title {
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: -0.05em;
+}
+
+.main--facts {
+    margin-top: 46px;
+    max-width: 400px;
+}
+
+.main--facts > li {
+    line-height: 19px;
+    padding-block: 10px;
+}
+
+/* The Blue Bullets */
+.main--facts > li::marker {
+    color: #61DAFB;
+    font-size: 1.4rem;
+}
+
+/* --- TOGGLER STYLES --- */
+
+.toggler {
+    display: flex;
+    align-items: center;
+}
+
+.toggler p {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.toggler--slider {
+    width: 25px;
+    height: 13px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px;
+    box-sizing: content-box;
+    border: 1px solid black;
+}
+
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+/* --- DARK MODE OVERRIDES --- */
+
+/* When the 'dark' class is present on <nav> */
+nav.dark {
+    background-color: #21222A;
+}
+
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+nav.dark .toggler--dark {
+    color: #FFFFFF;
+}
+
+nav.dark .toggler--slider {
+    background-color: #F5F5F5;
+    border-color: white;
+    justify-content: flex-end; /* Moves circle to the right */
+}
+
+nav.dark .toggler--slider--circle {
+    background-color: #2B283A;
+}
+
+/* When the 'dark' class is present on <main> */
+main.dark {
+    background-color: #282D35;
+    color: white;
+    background-image: url("./assets/react-icon-dark.png"); /* Optional: a darker bg icon */
+}
